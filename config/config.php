@@ -19,7 +19,7 @@ define('DB_PASS', '');
 define('DB_NAME', 'web_sekolah');
 
 // Base URL
-define('BASE_URL', 'https://websekolah.gdvmedia.my.id/');
+define('BASE_URL', 'https://websekolah.gdvmedia.my.id/public/');
 
 // App Root
 define('APP_ROOT', dirname(dirname(__FILE__)));
