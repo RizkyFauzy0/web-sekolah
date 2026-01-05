@@ -5,10 +5,12 @@ class AdminController extends Controller
     public function __construct()
     {
         // Skip login check for login page
-        if ($_SERVER['REQUEST_URI'] !== '/web-sekolah/public/admin/login' && 
-            !strpos($_SERVER['REQUEST_URI'], 'admin/login')) {
-            $this->requireLogin();
+        // Check if current request is for login page
+        $currentUrl = $_SERVER['REQUEST_URI'] ?? '';
+        if (strpos($currentUrl, 'admin/login') !== false) {
+            return; // Don't require login for login page
         }
+        $this->requireLogin();
     }
 
     public function index()

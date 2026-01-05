@@ -1,8 +1,15 @@
 <?php
-session_start();
 
 // Load config
 require_once '../config/config.php';
+
+// Session configuration - MUST be set BEFORE session_start()
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
+ini_set('session.cookie_secure', 1); // Set to 1 for HTTPS
+
+// Start session
+session_start();
 
 // Autoload core classes
 spl_autoload_register(function ($class_name) {

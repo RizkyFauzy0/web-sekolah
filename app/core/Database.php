@@ -2,10 +2,10 @@
 
 class Database
 {
-    private $host = DB_HOST;
-    private $user = DB_USER;
-    private $pass = DB_PASS;
-    private $db_name = DB_NAME;
+    private $host;
+    private $user;
+    private $pass;
+    private $db_name;
 
     private $dbh;
     private $stmt;
@@ -13,6 +13,16 @@ class Database
 
     public function __construct()
     {
+        // Check if config is loaded, if not, load it
+        if (!defined('DB_HOST')) {
+            require_once __DIR__ . '/../../config/config.php';
+        }
+        
+        $this->host = DB_HOST;
+        $this->user = DB_USER;
+        $this->pass = DB_PASS;
+        $this->db_name = DB_NAME;
+        
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name . ';charset=utf8mb4';
         
         $options = [
