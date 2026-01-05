@@ -42,8 +42,10 @@ Website sekolah modern dan responsive yang dibangun menggunakan **PHP Native** d
 
 - PHP 7.4 atau lebih tinggi
 - MySQL 5.7 atau lebih tinggi
-- Apache Web Server dengan mod_rewrite enabled
+- **Apache** dengan mod_rewrite enabled ATAU **Nginx**
 - Browser modern (Chrome, Firefox, Safari, Edge)
+
+> **Note:** Untuk instalasi di Nginx/aaPanel, lihat [INSTALLATION_NGINX.md](INSTALLATION_NGINX.md)
 
 ## 🔧 Instalasi
 
